@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin — ZOOM Technologie</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/admin.css"/>
+  <link rel="stylesheet" href="css/features.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     ÉCRAN DE CONNEXION
+══════════════════════════════════════ -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="login-logo-icon"><i class="fas fa-bolt"></i></div>
+      <div>
+        <div class="login-logo-name">ZOOM Technologie</div>
+        <div class="login-logo-sub">Tableau de bord administrateur</div>
+      </div>
+    </div>
+    <div class="login-form">
+      <label class="login-label"><i class="fas fa-lock"></i> Mot de passe</label>
+      <div class="login-input-wrap">
+        <input type="password" id="loginInput" class="login-input"
+          placeholder="Entrez le mot de passe…"
+          onkeydown="if(event.key==='Enter')ZoomAdmin.login()"/>
+        <button class="login-eye" onclick="ZoomAdmin.togglePwd()" title="Afficher/masquer">
+          <i class="fas fa-eye" id="eyeIcon"></i>
+        </button>
+      </div>
+      <div class="login-error" id="loginError"></div>
+      <button class="login-btn" onclick="ZoomAdmin.login()">
+        <i class="fas fa-sign-in-alt"></i> Accéder au tableau de bord
+      </button>
+    </div>
+    <div class="login-footer">
+      <a href="index.html"><i class="fas fa-arrow-left"></i> Retour au site</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     DASHBOARD (masqué jusqu'à connexion)
+══════════════════════════════════════ -->
+<div id="dashboard" style="display:none">
+
+  <!-- Sidebar -->
+  <aside class="adm-sidebar" id="admSidebar">
+    <div class="adm-sidebar-logo">
+      <div class="adm-logo-icon"><i class="fas fa-bolt"></i></div>
+      <div>
+        <div class="adm-logo-name">ZOOM</div>
+        <div class="adm-logo-sub">Admin</div>
+      </div>
+    </div>
+    <nav class="adm-nav">
+      <a class="adm-nav-link active" onclick="ZoomAdmin.showSection('overview')" href="#">
+        <i class="fas fa-chart-pie"></i><span>Vue d'ensemble</span>
+      </a>
+      <a class="adm-nav-link" onclick="ZoomAdmin.showSection('products')" href="#">
+        <i class="fas fa-fire"></i><span>Produits populaires</span>
+      </a>
+      <a class="adm-nav-link" onclick="ZoomAdmin.showSection('searches')" href="#">
+        <i class="fas fa-search"></i><span>Recherches</span>
+      </a>
+      <a class="adm-nav-link" onclick="ZoomAdmin.showSection('visitors')" href="#">
+        <i class="fas fa-users"></i><span>Visiteurs</span>
+      </a>
+      <a class="adm-nav-link" onclick="ZoomAdmin.showSection('push')" href="#">
+        <i class="fas fa-bell"></i><span>Notifications Push</span>
+      </a>
+      <a class="adm-nav-link" onclick="ZoomAdmin.showSection('loyalty')" href="#">
+        <i class="fas fa-star"></i><span>Fidélité</span>
+      </a>
+      <a class="adm-nav-link" onclick="ZoomAdmin.showSection('offers')" href="#">
+        <i class="fas fa-fire"></i><span>Offres limitées</span>
+      </a>
+    </nav>
+    <div class="adm-sidebar-footer">
+      <button class="adm-logout" onclick="ZoomAdmin.logout()">
+        <i class="fas fa-sign-out-alt"></i> Déconnexion
+      </button>
+      <a href="index.html" class="adm-back-site">
+        <i class="fas fa-external-link-alt"></i> Voir le site
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="adm-main">
+
+    <!-- Topbar admin -->
+    <div class="adm-topbar">
+      <button class="adm-menu-toggle" onclick="ZoomAdmin.toggleSidebar()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="adm-topbar-title" id="admPageTitle">Vue d'ensemble</div>
+      <div class="adm-topbar-right">
+        <div class="adm-live-dot"></div>
+        <span class="adm-live-lbl">Données en temps réel</span>
+        <button class="adm-refresh" onclick="ZoomAdmin.refresh()" title="Rafraîchir">
+          <i class="fas fa-sync-alt"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ── SECTION : Vue d'ensemble ── -->
+    <section class="adm-section active" id="sec-overview">
+      <div class="adm-kpi-grid">
+        <div class="adm-kpi" data-color="blue">
+          <div class="adm-kpi-icon"><i class="fas fa-eye"></i></div>
+          <div class="adm-kpi-body">
+            <div class="adm-kpi-val" id="kpi-today">—</div>
+            <div class="adm-kpi-lbl">Visites aujourd'hui</div>
+          </div>
+        </div>
+        <div class="adm-kpi" data-color="green">
+          <div class="adm-kpi-icon"><i class="fas fa-calendar-week"></i></div>
+          <div class="adm-kpi-body">
+            <div class="adm-kpi-val" id="kpi-week">—</div>
+            <div class="adm-kpi-lbl">Visites cette semaine</div>
+          </div>
+        </div>
+        <div class="adm-kpi" data-color="orange">
+          <div class="adm-kpi-icon"><i class="fas fa-calendar-alt"></i></div>
+          <div class="adm-kpi-body">
+            <div class="adm-kpi-val" id="kpi-month">—</div>
+            <div class="adm-kpi-lbl">Visites ce mois</div>
+          </div>
+        </div>
+        <div class="adm-kpi" data-color="purple">
+          <div class="adm-kpi-icon"><i class="fas fa-infinity"></i></div>
+          <div class="adm-kpi-body">
+            <div class="adm-kpi-val" id="kpi-total">—</div>
+            <div class="adm-kpi-lbl">Total visites</div>
+          </div>
+        </div>
+        <div class="adm-kpi" data-color="red">
+          <div class="adm-kpi-icon"><i class="fas fa-shopping-cart"></i></div>
+          <div class="adm-kpi-body">
+            <div class="adm-kpi-val" id="kpi-carts">—</div>
+            <div class="adm-kpi-lbl">Ajouts au panier</div>
+          </div>
+        </div>
+        <div class="adm-kpi" data-color="teal">
+          <div class="adm-kpi-icon"><i class="fas fa-search"></i></div>
+          <div class="adm-kpi-body">
+            <div class="adm-kpi-val" id="kpi-searches">—</div>
+            <div class="adm-kpi-lbl">Recherches uniques</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Graphique visites 7 jours -->
+      <div class="adm-card">
+        <div class="adm-card-header">
+          <i class="fas fa-chart-bar"></i> Activité des 7 derniers jours
+        </div>
+        <div class="adm-chart-wrap">
+          <canvas id="chartWeek"></canvas>
+        </div>
+      </div>
+
+      <!-- Graphique catégories vues -->
+      <div class="adm-card">
+        <div class="adm-card-header">
+          <i class="fas fa-chart-pie"></i> Répartition des vues par catégorie
+        </div>
+        <div class="adm-chart-wrap adm-chart-small">
+          <canvas id="chartCats"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION : Produits populaires ── -->
+    <section class="adm-section" id="sec-products">
+      <div class="adm-card">
+        <div class="adm-card-header">
+          <i class="fas fa-fire"></i> Top produits les plus consultés
+        </div>
+        <div id="topProductsList" class="adm-list"></div>
+      </div>
+      <div class="adm-card">
+        <div class="adm-card-header">
+          <i class="fas fa-chart-bar"></i> Vues par produit (Top 8)
+        </div>
+        <div class="adm-chart-wrap">
+          <canvas id="chartProducts"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION : Recherches ── -->
+    <section class="adm-section" id="sec-searches">
+      <div class="adm-card">
+        <div class="adm-card-header">
+          <i class="fas fa-search"></i> Recherches les plus fréquentes
+        </div>
+        <div id="topSearchesList" class="adm-list"></div>
+      </div>
+      <div class="adm-card">
+        <div class="adm-card-header">
+          <i class="fas fa-history"></i> Historique récent des recherches
+        </div>
+        <div id="searchHistoryList" class="adm-list"></div>
+      </div>
+    </section>
+
+    <!-- ── SECTION : Visiteurs ── -->
+    <section class="adm-section" id="sec-visitors">
+      <div class="adm-card">
+        <div class="adm-card-header">
+          <i class="fas fa-users"></i> Statistiques des visiteurs
+        </div>
+        <div class="adm-visitor-grid" id="visitorDetails"></div>
+      </div>
+      <div class="adm-card">
+        <div class="adm-card-header">
+          <i class="fas fa-chart-line"></i> Évolution des visites (30 jours)
+        </div>
+        <div class="adm-chart-wrap">
+          <canvas id="chartMonth"></canvas>
+        </div>
+      </div>
+      <div class="adm-card adm-card-danger">
+        <div class="adm-card-header">
+          <i class="fas fa-trash-alt"></i> Réinitialisation des données
+        </div>
+        <p class="adm-reset-warn">⚠️ Cette action effacera toutes les statistiques enregistrées dans ce navigateur. Elle ne peut pas être annulée.</p>
+        <button class="adm-reset-btn" onclick="ZoomAdmin.resetStats()">
+          <i class="fas fa-trash-alt"></i> Effacer toutes les statistiques
+        </button>
+      </div>
+    </section>
+
+    <!-- ── SECTION : Push Notifications ── -->
+    <section class="adm-section" id="sec-push">
+      <div class="adm-card">
+        <div class="adm-card-header"><i class="fas fa-bell"></i> Envoyer des notifications push</div>
+        <div id="admPushPanel"></div>
+      </div>
+    </section>
+
+    <!-- ── SECTION : Programme de fidélité ── -->
+    <section class="adm-section" id="sec-loyalty">
+      <div class="adm-kpi-grid" id="admLoyaltyKpis"></div>
+      <div class="adm-card">
+        <div class="adm-card-header"><i class="fas fa-history"></i> Historique des points</div>
+        <div class="adm-list" id="admLoyaltyHistory"></div>
+      </div>
+    </section>
+
+    <!-- ── SECTION : Offres limitées ── -->
+    <section class="adm-section" id="sec-offers">
+      <div class="adm-card">
+        <div class="adm-card-header"><i class="fas fa-fire"></i> Gérer les offres actives</div>
+        <div class="adm-list" id="admOffersPanel"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="js/products.js"></script>
+<script src="js/push-notifications.js"></script>
+<script src="js/loyalty.js"></script>
+<script src="js/limited-offers.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

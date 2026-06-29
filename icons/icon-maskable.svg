@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#0F1111"/>
+  <text x="256" y="256" font-family="Arial" font-size="179"
+        fill="#0055FF" text-anchor="middle" dominant-baseline="middle">⚡</text>
+  <text x="256" y="378" font-family="Arial Black" font-size="61"
+        fill="white" text-anchor="middle" font-weight="900" letter-spacing="2">ZOOM</text>
+</svg>

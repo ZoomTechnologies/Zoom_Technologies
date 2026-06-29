@@ -1,0 +1,190 @@
+/* ===========================
+   ZOOM TECHNOLOGIE — FILTERS.CSS v4
+   Barre 3 selects compacts — 1 ligne horizontale
+   =========================== */
+
+/* Layout catalogue — 1 colonne, pas de panneau latéral */
+.catalogue-layout { display: block; }
+.catalogue-main   { width: 100%; }
+
+/* ════════════════════════════
+   BARRE FILTRE COMPACTE
+   ════════════════════════════ */
+#filterPanel {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 16px;
+  position: static;
+  overflow: visible;
+}
+
+.fbar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: #fff;
+  border: 1px solid #e8ecf0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ── Groupe label + select ── */
+.fbar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 140px;
+  max-width: 210px;
+}
+
+.fbar-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #8899aa;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 2px;
+}
+.fbar-label i { color: #0055FF; font-size: 0.6rem; }
+
+/* ── Wrapper select + chevron ── */
+.fbar-select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fbar-select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #f7f9fc;
+  border: 1.5px solid #e0e6ef;
+  border-radius: 8px;
+  padding: 7px 30px 7px 10px;
+  font-size: 0.80rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fbar-select:hover {
+  border-color: #0055FF;
+  background: #f0f5ff;
+}
+
+.fbar-select:focus {
+  border-color: #0055FF;
+  box-shadow: 0 0 0 3px rgba(0,85,255,0.10);
+  background: #fff;
+}
+
+/* Select actif (valeur sélectionnée) */
+.fbar-select.active {
+  border-color: #0055FF;
+  background: #eef3ff;
+  color: #0055FF;
+}
+
+.fbar-chevron {
+  position: absolute;
+  right: 9px;
+  font-size: 0.58rem;
+  color: #8899aa;
+  pointer-events: none;
+  transition: color 0.18s;
+}
+.fbar-select:focus + .fbar-chevron,
+.fbar-select:hover + .fbar-chevron { color: #0055FF; }
+
+/* ── Séparateur vertical entre groupes ── */
+.fbar-group + .fbar-group {
+  border-left: 1px solid #e8ecf0;
+  padding-left: 10px;
+}
+
+/* ── Bouton reset ── */
+.fbar-reset {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 12px;
+  background: #fff0f0;
+  color: #e53e3e;
+  border: 1.5px solid #fcc;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s, border-color 0.18s;
+  flex-shrink: 0;
+}
+.fbar-reset:hover { background: #ffe0e0; border-color: #e53e3e; }
+.fbar-reset i { font-size: 0.65rem; }
+
+/* ── Compteur résultats ── */
+.fbar-count {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #8899aa;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════
+   MASQUER les anciens éléments
+   filtre panel overlay & bouton mobile
+   (conservés dans le HTML mais inutilisés)
+   ════════════════════════════ */
+#filterPanelOverlay,
+#filterMobileBtn,
+.filter-toggle-wrap,
+.filter-bar,
+.filter-bar-inner {
+  display: none !important;
+}
+
+/* ════════════════════════════
+   RESPONSIVE MOBILE
+   ════════════════════════════ */
+@media (max-width: 768px) {
+  .fbar-wrap {
+    gap: 8px;
+    padding: 9px 11px;
+  }
+  .fbar-group {
+    min-width: 0;
+    flex: 1 1 calc(50% - 14px);
+    max-width: none;
+  }
+  .fbar-group + .fbar-group {
+    border-left: none;
+    padding-left: 0;
+  }
+  .fbar-select { font-size: 0.76rem; padding: 7px 24px 7px 8px; }
+  .fbar-reset  { font-size: 0.70rem; padding: 6px 10px; }
+  .fbar-count  { width: 100%; text-align: center; margin-left: 0; }
+}
+
+@media (max-width: 480px) {
+  .fbar-group { flex: 1 1 100%; max-width: 100%; }
+  .fbar-reset { width: 100%; justify-content: center; }
+}

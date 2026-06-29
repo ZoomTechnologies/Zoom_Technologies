@@ -1,0 +1,270 @@
+/* ===========================
+   ZOOM TECHNOLOGIE — ZOOM-IMAGE.CSS
+   Loupe · Lightbox plein écran · Swipe
+   =========================== */
+
+/* ════════════════════════════
+   MODAL — image cliquable
+   ════════════════════════════ */
+.modal-main-img {
+  position: relative;
+  overflow: hidden;
+}
+.modal-main-img .modal-real-img {
+  transition: opacity 0.2s;
+}
+
+/* Bouton "agrandir" discret en bas à droite de l'image */
+.zt-modal-zoom-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.18s, transform 0.18s;
+  z-index: 10;
+}
+.modal-main-img:hover .zt-modal-zoom-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ════════════════════════════
+   LOUPE (desktop)
+   ════════════════════════════ */
+.zt-zoom-lens {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border: 2px solid #0055FF;
+  border-radius: 4px;
+  background: rgba(0,85,255,0.08);
+  cursor: crosshair;
+  display: none;
+  z-index: 20;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(0,85,255,0.3);
+}
+
+.zt-zoom-result {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 0;
+  width: 340px;
+  height: 340px;
+  border-radius: 12px;
+  border: 1px solid #e0e8f5;
+  background-color: #f7f9fc;
+  background-repeat: no-repeat;
+  display: none;
+  z-index: 100;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  overflow: hidden;
+}
+
+/* Sur tablette et petit écran : on masque la loupe desktop */
+@media (max-width: 900px) {
+  .zt-zoom-result { display: none !important; }
+  .zt-zoom-lens   { display: none !important; }
+}
+
+/* ════════════════════════════
+   LIGHTBOX PLEIN ÉCRAN
+   ════════════════════════════ */
+#zt-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+#zt-lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.zt-lb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5,5,15,0.94);
+  backdrop-filter: blur(8px);
+  cursor: zoom-out;
+}
+
+.zt-lb-box {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 56px 72px 72px;
+}
+
+/* ── Image principale ── */
+.zt-lb-img-wrap {
+  position: relative;
+  max-width: min(90vw, 800px);
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#ztLbImg {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+  transition: opacity 0.22s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Spinner de chargement */
+.zt-lb-spinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── Bouton fermer ── */
+.zt-lb-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.20);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+.zt-lb-close:hover {
+  background: rgba(255,255,255,0.25);
+  transform: rotate(90deg);
+}
+
+/* ── Flèches navigation ── */
+.zt-lb-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.20);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+.zt-lb-arrow:hover {
+  background: rgba(255,255,255,0.28);
+  transform: translateY(-50%) scale(1.08);
+}
+.zt-lb-prev { left: 14px; }
+.zt-lb-next { right: 14px; }
+
+/* ── Compteur ── */
+.zt-lb-counter {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.50);
+  backdrop-filter: blur(4px);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ── Points de navigation ── */
+.zt-lb-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.zt-lb-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: all 0.18s;
+  border: 1px solid rgba(255,255,255,0.20);
+}
+.zt-lb-dot.active {
+  background: white;
+  transform: scale(1.25);
+}
+.zt-lb-dot:hover { background: rgba(255,255,255,0.70); }
+
+/* ════════════════════════════
+   RESPONSIVE MOBILE
+   ════════════════════════════ */
+@media (max-width: 600px) {
+  .zt-lb-box {
+    padding: 56px 48px 64px;
+  }
+  .zt-lb-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 0.88rem;
+  }
+  .zt-lb-prev { left: 6px; }
+  .zt-lb-next { right: 6px; }
+  #ztLbImg {
+    max-height: 70vh;
+    border-radius: 6px;
+  }
+  .zt-lb-close {
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+  }
+}

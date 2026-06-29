@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZOOM Technologie – Ordinateurs, Accessoires Informatiques & NTIC à Douala</title>
+  <meta name="description" content="ZOOM Technologie, votre boutique informatique à Douala-Bar Akwa. Vente en gros et détail d'ordinateurs, smartphones, accessoires et équipements NTIC importés directement de Chine."/>
+  <meta name="keywords" content="ordinateur Douala, informatique Douala, boutique NTIC Cameroun, vente ordinateur Cameroun, accessoires informatique Douala, ZOOM Technologie, laptop Douala, téléphone Douala, Bar Akwa, informatique Akwa, ordinateur Bonanjo, laptop Bali, smartphone Deido, réseau WiFi Douala, vente gros informatique Cameroun, import Chine ordinateur, NTIC Littoral"/>
+  <meta name="author" content="ZOOM Technologie"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://zoomtechnologie.github.io/"/>
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#0055FF"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="ZOOM Tech"/>
+  <link rel="apple-touch-icon" href="icons/icon-192x192.svg"/>
+  <link rel="icon" type="image/svg+xml" href="icons/icon-96x96.svg"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://zoomtechnologie.github.io/"/>
+  <meta property="og:title" content="ZOOM Technologie – Informatique & NTIC à Douala"/>
+  <meta property="og:description" content="Ordinateurs, smartphones, accessoires et équipements NTIC. Vente en gros et détail. Livraison au Cameroun."/>
+  <meta property="og:image" content="icons/icon-512x512.svg"/>
+  <meta property="og:image:width" content="512"/>
+  <meta property="og:image:height" content="512"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="ZOOM Technologie – Informatique &amp; NTIC à Douala"/>
+  <meta name="twitter:description" content="Ordinateurs, smartphones, accessoires et équipements NTIC. Vente en gros et détail."/>
+  <meta name="twitter:image" content="icons/icon-512x512.svg"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":["LocalBusiness","Store","ComputerStore"],"name":"ZOOM Technologie","alternateName":["ZOOM Tech","Zoom Technologie Douala"],"description":"Boutique informatique à Douala-Bar Akwa : ordinateurs, smartphones, accessoires NTIC, équipements réseau. Vente en gros et détail. Import direct Chine.","url":"https://zoomtechnologie.github.io/","telephone":"+237697557365","address":{"@type":"PostalAddress","streetAddress":"Douala-Bar Akwa","addressLocality":"Douala","addressRegion":"Littoral","addressCountry":"CM"},"geo":{"@type":"GeoCoordinates","latitude":4.0510,"longitude":9.7085},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"}],"priceRange":"FCFA","currenciesAccepted":"XAF","paymentAccepted":"Cash, Mobile Money","areaServed":[{"@type":"City","name":"Douala"},{"@type":"State","name":"Cameroun"}],"sameAs":["https://www.facebook.com/share/1E4NAzynkj/","https://wa.me/237697557365"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"58","bestRating":"5"},"hasMap":"https://nous-trouver.html"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/cookies.css"/>
+  <link rel="stylesheet" href="css/cart.css"/>
+  <link rel="stylesheet" href="css/filters.css"/>
+  <link rel="stylesheet" href="css/chat.css"/>
+  <link rel="stylesheet" href="css/i18n.css"/>
+  <link rel="stylesheet" href="css/zoom-image.css"/>
+  <link rel="stylesheet" href="css/features.css"/>
+  <link rel="stylesheet" href="css/share.css"/>
+
+<style>
+/* Lazy loading images */
+img.zt-lazy {
+  background: linear-gradient(90deg,#f0f2f5 25%,#e8ecf0 50%,#f0f2f5 75%);
+  background-size: 200% 100%;
+  animation: lazyShimmer 1.4s infinite;
+  min-height: 40px;
+}
+img.zt-lazy-loaded { animation: none; background: none; }
+@keyframes lazyShimmer {
+  0%   { background-position: 200% 0 }
+  100% { background-position: -200% 0 }
+}
+/* Decoding async sur toutes les images */
+img { decoding: async; }
+/* Font display */
+@font-face { font-display: swap; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="topbar_address">Douala-Bar Akwa, Douala, Cameroun</span></span>
+    <span><i class="fas fa-phone"></i> +237 697557365</span>
+    <span><i class="fas fa-clock"></i> <span data-i18n="topbar_hours">Lun–Sam : 8h–18h</span></span>
+    <span class="topbar-right"><i class="fas fa-truck"></i> <span data-i18n="topbar_delivery">Livraison rapide Douala & Cameroun</span></span>
+    <a href="admin.html" class="topbar-admin-btn" title="Espace administrateur">
+      <i class="fas fa-chart-line"></i> Admin
+    </a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+      <div class="logo-text">
+        <span class="logo-main">ZOOM</span>
+        <span class="logo-sub">TECHNOLOGIE</span>
+      </div>
+    </a>
+    <div class="search-bar">
+      <select class="search-category" id="categoryFilter">
+        <option value="">Toutes catégories</option>
+        <option value="ordinateur">Ordinateurs</option>
+        <option value="smartphone">Smartphones</option>
+        <option value="accessoire"><span data-i18n="footer_access">Accessoires</span></option>
+        <option value="reseau"><span data-i18n="footer_network">Réseau & WiFi</span></option>
+        <option value="ecran">Écrans</option>
+        <option value="stockage">Stockage</option>
+        <option value="energie"><span data-i18n="footer_power">Énergie & Onduleurs</span></option>
+      </select>
+      <input type="text" id="searchInput" placeholder="Rechercher un produit, une marque..." data-i18n="search_placeholder" autocomplete="off"/>
+      <button class="search-btn" onclick="searchProducts()"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="header-actions">
+      <a href="https://wa.me/237697557365" target="_blank" class="btn-whatsapp-header">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="https://m.me/tem.larissa" target="_blank" class="btn-messenger-header">
+        <i class="fab fa-facebook-messenger"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1E4NAzynkj/" target="_blank" class="btn-fb-header">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <!-- BOUTON PANIER -->
+      <button class="cart-header-btn" onclick="ZoomCart.openDrawer()" title="Mon panier" aria-label="Ouvrir le panier">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartBadge">0</span>
+      </button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-menu" id="navMenu">
+    <ul>
+      <li><a href="#accueil" onclick="closeMenu()"><i class="fas fa-home"></i> <span data-i18n="nav_home">Accueil</span></a></li>
+      <li><a href="#flash" onclick="closeMenu()"><i class="fas fa-bolt"></i> <span data-i18n="nav_flash"><span data-i18n="footer_flash">Ventes Flash</span></span></a></li>
+      <li><a href="#catalogue" onclick="closeMenu()"><i class="fas fa-laptop"></i> <span data-i18n="nav_catalogue">Catalogue</span></a></li>
+      <li><a href="#gros" onclick="closeMenu()"><i class="fas fa-boxes"></i> <span data-i18n="nav_gros">Vente en Gros</span></a></li>
+      <li><a href="#apropos" onclick="closeMenu()"><i class="fas fa-info-circle"></i> <span data-i18n="nav_apropos">À Propos</span></a></li>
+      <li><a href="#localisation" onclick="closeMenu()"><i class="fas fa-map-marker-alt"></i> <span data-i18n="nav_localisation">Localisation</span></a></li>
+      <li><a href="nous-trouver.html"><i class="fas fa-route"></i> <span>Nous Trouver</span></a></li>
+      <li><a href="#contact" onclick="closeMenu()"><i class="fas fa-envelope"></i> <span data-i18n="nav_contact"><span data-i18n="nav_contact">Contact</span></span></a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO SLIDER -->
+<section class="hero" id="accueil">
+
+  <!-- SLIDES — 15 images locales -->
+  <div class="hero-slider">
+    <div class="hero-slide active" style="background-image:url('images/1.jpg')"  data-title="L'ultra-Tech à votre portée" data-highlight="à Douala"></div>
+    <div class="hero-slide"         style="background-image:url('images/2.jpg')"  data-title="Accessoires Tech" data-highlight="dernière génération"></div>
+    <div class="hero-slide"         style="background-image:url('images/3.jpg')"  data-title="Laptops" data-highlight="dernière génération"></div>
+    <div class="hero-slide"         style="background-image:url('images/4.jpg')"  data-title="Casques & écouteurs" data-highlight="de toutes marques"></div>
+    <div class="hero-slide"         style="background-image:url('images/5.jpg')"  data-title="Tablette, iPad, PC Ultra-Slim" data-highlight="dernière génération"></div>
+    <div class="hero-slide"         style="background-image:url('images/6.jpg')"  data-title="Accessoires" data-highlight="à prix imbattables"></div>
+    <div class="hero-slide"         style="background-image:url('images/7.jpg')"  data-title="Clavier, souris, Hub USB" data-highlight="& adaptateurs"></div>
+    <div class="hero-slide"         style="background-image:url('images/8.jpg')"  data-title="Chargeurs, câbles USB" data-highlight="& supports pour PC portable"></div>
+    <div class="hero-slide"         style="background-image:url('images/9.jpg')"  data-title="Housses, sacoches" data-highlight="& sacs à dos pour PC"></div>
+    <div class="hero-slide"         style="background-image:url('images/10.jpg')" data-title="Clés USB, cartes mémoire" data-highlight="& stockage externe"></div>
+    <div class="hero-slide"         style="background-image:url('images/11.jpg')" data-title="Webcams, micros, multiprises" data-highlight="& accessoires d'alimentation"></div>
+    <div class="hero-slide"         style="background-image:url('images/12.jpg')" data-title="Antivols & filtres de confidentialité" data-highlight="pour laptop"></div>
+    <div class="hero-slide"         style="background-image:url('images/13.jpg')" data-title="Afficheurs, claviers" data-highlight="& batteries pour laptop"></div>
+    <div class="hero-slide"         style="background-image:url('images/14.jpg')" data-title="Accessoires de capture" data-highlight="& cinématographique"></div>
+    <div class="hero-slide"         style="background-image:url('images/15.jpg')" data-title="Équipements réseaux toutes marques" data-highlight="Câbles, Switch, Routeur"></div>
+  </div>
+
+  <div class="hero-overlay"></div>
+  <button class="slider-arrow slider-prev" id="sliderPrev"><i class="fas fa-chevron-left"></i></button>
+  <button class="slider-arrow slider-next" id="sliderNext"><i class="fas fa-chevron-right"></i></button>
+  <div class="slider-dots" id="sliderDots"></div>
+
+  <!-- CONTENU HERO — titre dynamique géré par JS -->
+  <div class="hero-content">
+    <div class="hero-badge" data-i18n="hero_badge">🇨🇳 Importé directement de Chine · Meilleurs prix garantis</div>
+
+    <!-- Titre dynamique : change à chaque slide -->
+    <div class="hero-title-wrap">
+      <h1 class="hero-title" id="heroTitle">L'ultra-Tech à votre portée</h1>
+      <div class="hero-highlight-wrap">
+        <span class="hero-highlight" id="heroHighlight">à Douala</span>
+      </div>
+    </div>
+
+    <p class="hero-subtitle"><b data-i18n="hero_subtitle">Ordinateurs · Maintenance · Smartphones · Accessoires · Équipements NTIC<br/>Vente en gros & en détail — Douala-Bar Akwa, Douala</b></p>
+    <div class="hero-search">
+      <input type="text" id="heroSearch" placeholder="Que cherchez-vous ? Ex : laptop HP, clé USB, routeur…" data-i18n="hero_search_ph"/>
+      <button onclick="heroSearchProducts()"><i class="fas fa-search"></i> Rechercher</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>500+</strong><span>Produits</span></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><strong>Gros</strong><span>& Détail</span></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><strong>Import</strong><span>Chine directe</span></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><strong>Livraison</strong><span>Cameroun</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- PROMO TICKER -->
+<div class="promo-ticker">
+  <div class="ticker-track">
+    <span>🔥 Promotions en cours · </span><span>💻 Laptops à partir de 150 000 FCFA · </span><span>📱 Smartphones reconditionnés disponibles · </span><span>🌐 Routeurs WiFi 6 · </span><span>⚡ Onduleurs & chargeurs solaires · </span><span>🖥️ Écrans Full HD 24 pouces · </span><span>🔥 Promotions en cours · </span><span>💻 Laptops à partir de 150 000 FCFA · </span><span>📱 Smartphones reconditionnés disponibles · </span><span>🌐 Routeurs WiFi 6 · </span>
+  </div>
+</div>
+
+<!-- CATÉGORIES VISUELLES (style Amazon/Glotelho) -->
+<section class="cat-visual-section">
+  <div class="container">
+    <div class="section-header"><h2 data-i18n="cat_title">Parcourir par catégorie</h2></div>
+    <div class="cat-visual-grid">
+      <button class="cat-visual-btn" onclick="filterCategory(null,'ordinateur')">
+        <div class="cat-visual-img" style="background:linear-gradient(135deg,#1a1a2e,#16213e)"><span>💻</span></div>
+        <span class="cat-visual-label" data-i18n="cat_ordinateur">Ordinateurs</span>
+      </button>
+      <button class="cat-visual-btn" onclick="filterCategory(null,'smartphone')">
+        <div class="cat-visual-img" style="background:linear-gradient(135deg,#0f3460,#533483)"><span>📱</span></div>
+        <span class="cat-visual-label" data-i18n="cat_smartphone">Smartphones</span>
+      </button>
+      <button class="cat-visual-btn" onclick="filterCategory(null,'accessoire')">
+        <div class="cat-visual-img" style="background:linear-gradient(135deg,#1b4332,#2d6a4f)"><span>🎧</span></div>
+        <span class="cat-visual-label" data-i18n="cat_accessoire">Accessoires</span>
+      </button>
+      <button class="cat-visual-btn" onclick="filterCategory(null,'reseau')">
+        <div class="cat-visual-img" style="background:linear-gradient(135deg,#7b2d00,#c1440e)"><span>📡</span></div>
+        <span class="cat-visual-label" data-i18n="cat_reseau">Réseau & WiFi</span>
+      </button>
+      <button class="cat-visual-btn" onclick="filterCategory(null,'ecran')">
+        <div class="cat-visual-img" style="background:linear-gradient(135deg,#1a0533,#4a0e8f)"><span>🖥️</span></div>
+        <span class="cat-visual-label" data-i18n="cat_ecran">Écrans</span>
+      </button>
+      <button class="cat-visual-btn" onclick="filterCategory(null,'stockage')">
+        <div class="cat-visual-img" style="background:linear-gradient(135deg,#03045e,#0077b6)"><span>💾</span></div>
+        <span class="cat-visual-label" data-i18n="cat_stockage">Stockage</span>
+      </button>
+      <button class="cat-visual-btn" onclick="filterCategory(null,'energie')">
+        <div class="cat-visual-img" style="background:linear-gradient(135deg,#4d1a00,#d4500a)"><span>⚡</span></div>
+        <span class="cat-visual-label" data-i18n="cat_energie">Énergie</span>
+      </button>
+      <button class="cat-visual-btn" onclick="filterCategory(null,'')">
+        <div class="cat-visual-img" style="background:linear-gradient(135deg,#1c1c1c,#444)"><span>🛒</span></div>
+        <span class="cat-visual-label" data-i18n="cat_tout">Tout voir</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- VENTES FLASH (style Glotelho) -->
+<section class="flash-section" id="flash">
+  <div class="container">
+    <div class="flash-header">
+      <div class="flash-title"><i class="fas fa-bolt"></i> <span data-i18n="flash_title">Ventes Flash</span></div>
+      <div class="flash-countdown" id="flashCountdown"></div>
+      <a href="#catalogue" class="flash-see-all"><span data-i18n="flash_see_all">Voir tout</span> <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="flash-grid" id="flashGrid"></div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<section class="cat-nav">
+  <div class="container">
+    <div class="cat-grid">
+      <button class="cat-btn active" data-cat="" onclick="filterCategory(this,'')"><i class="fas fa-th"></i><span>Tout</span></button>
+      <button class="cat-btn" data-cat="ordinateur" onclick="filterCategory(this,'ordinateur')"><i class="fas fa-laptop"></i><span>Ordinateurs</span></button>
+      <button class="cat-btn" data-cat="smartphone" onclick="filterCategory(this,'smartphone')"><i class="fas fa-mobile-alt"></i><span>Smartphones</span></button>
+      <button class="cat-btn" data-cat="accessoire" onclick="filterCategory(this,'accessoire')"><i class="fas fa-headphones"></i><span>Accessoires</span></button>
+      <button class="cat-btn" data-cat="reseau" onclick="filterCategory(this,'reseau')"><i class="fas fa-wifi"></i><span>Réseau</span></button>
+      <button class="cat-btn" data-cat="ecran" onclick="filterCategory(this,'ecran')"><i class="fas fa-desktop"></i><span>Écrans</span></button>
+      <button class="cat-btn" data-cat="stockage" onclick="filterCategory(this,'stockage')"><i class="fas fa-hdd"></i><span>Stockage</span></button>
+      <button class="cat-btn" data-cat="energie" onclick="filterCategory(this,'energie')"><i class="fas fa-plug"></i><span>Énergie</span></button>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- CATALOGUE -->
+<section class="catalogue" id="catalogue">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="catalogue_title">Notre Catalogue</h2>
+      <p class="catalogue-subtitle" data-i18n="catalogue_sub">Découvrez tous nos équipements informatiques disponibles en boutique à Douala</p>
+      <div class="catalogue-toolbar">
+        <p id="resultCount">Tous les produits disponibles</p>
+        <div class="toolbar-right">
+          <!-- Bouton filtres mobile -->
+          <button id="filterMobileBtn" onclick="ZoomFilters.openMobile()">
+            <i class="fas fa-sliders-h"></i> Filtres
+            <span class="filter-mobile-badge" id="filterMobileBadge"></span>
+          </button>
+          <div class="sort-bar">
+            <label data-i18n="sort_label">Trier :</label>
+            <select id="sortSelect" onchange="sortProducts()">
+              <option value="default" data-i18n="sort_default">Par défaut</option>
+              <option value="price-asc" data-i18n="sort_price_asc">Prix croissant</option>
+              <option value="price-desc" data-i18n="sort_price_desc">Prix décroissant</option>
+              <option value="promo" data-i18n="sort_promo">Promotions d'abord</option>
+              <option value="new" data-i18n="sort_new">Nouveautés d'abord</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LAYOUT : panneau filtres + grille produits -->
+    <div class="catalogue-layout">
+
+      <!-- Overlay mobile filtres -->
+      <div id="filterPanelOverlay" onclick="ZoomFilters.closeMobile()"></div>
+
+      <!-- PANNEAU FILTRES -->
+      <aside id="filterPanel"></aside>
+
+      <!-- GRILLE PRODUITS -->
+      <div class="catalogue-main">
+        <div class="products-grid" id="productsGrid"></div>
+        <div class="no-results" id="noResults" style="display:none;">
+          <i class="fas fa-search"></i>
+          <p>Aucun produit trouvé.<br/>Contactez-nous pour une commande personnalisée.</p>
+          <a href="https://wa.me/237697557365?text=Bonjour, je cherche un produit non trouvé sur votre site." class="btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> Contacter sur WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VENTE EN GROS -->
+<section class="gros-section" id="gros">
+  <div class="container">
+    <div class="gros-grid">
+      <div class="gros-text">
+        <span class="eyebrow" data-i18n="gros_eyebrow">Commerce B2B</span>
+        <h2 data-i18n="gros_title">Vente en Gros disponible</h2>
+        <p><span data-i18n="gros_desc">Vous êtes revendeur, entreprise ou institution ? ZOOM Technologie vous propose des tarifs préférentiels sur les commandes en volume, avec des équipements importés directement de Chine.</span></p>
+        <ul class="gros-avantages">
+          <li><i class="fas fa-check-circle"></i> <span data-i18n="gros_av1">Prix grossiste négociables</span></li>
+          <li><i class="fas fa-check-circle"></i> <span data-i18n="gros_av2">Commandes personnalisées selon vos besoins</span></li>
+          <li><i class="fas fa-check-circle"></i> <span data-i18n="gros_av3">Importation directe depuis la Chine</span></li>
+          <li><i class="fas fa-check-circle"></i> <span data-i18n="gros_av4">Livraison dans tout le Cameroun</span></li>
+          <li><i class="fas fa-check-circle"></i> <span data-i18n="gros_av5">Devis gratuit sous 24h</span></li>
+        </ul>
+        <a href="https://wa.me/237697557365?text=Bonjour ZOOM Technologie, je suis intéressé par la vente en gros. Pouvez-vous me faire un devis ?" class="btn-primary" target="_blank">
+          <i class="fab fa-whatsapp"></i> <span data-i18n="gros_btn">Demander un devis gratuit</span>
+        </a>
+      </div>
+      <div class="gros-visual">
+        <div class="gros-card"><i class="fas fa-laptop"></i><strong data-i18n="gros_c1_lbl">Ordinateurs</strong><span data-i18n="gros_c1_sub">dès 10 unités</span></div>
+        <div class="gros-card"><i class="fas fa-mobile-alt"></i><strong data-i18n="gros_c2_lbl">Smartphones</strong><span data-i18n="gros_c2_sub">dès 5 unités</span></div>
+        <div class="gros-card"><i class="fas fa-headphones"></i><strong data-i18n="gros_c3_lbl">Accessoires</strong><span data-i18n="gros_c3_sub">dès 20 unités</span></div>
+        <div class="gros-card"><i class="fas fa-wifi"></i><strong data-i18n="gros_c4_lbl">Réseau</strong><span data-i18n="gros_c4_sub">dès 5 unités</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section class="apropos" id="apropos">
+  <div class="container">
+    <div class="section-header"><h2 data-i18n="apropos_title">À Propos de ZOOM Technologie</h2></div>
+    <div class="apropos-grid">
+      <div class="apropos-text">
+        <p>ZOOM Technologie est votre boutique de référence en équipements informatiques et NTIC à Douala. Installée au cœur de <strong>Douala-Bar Akwa</strong>, nous proposons une large gamme de produits technologiques à des prix compétitifs.</p>
+        <p>Grâce à nos <strong>partenariats directs avec des fournisseurs en Chine</strong>, nous vous garantissons des équipements de qualité aux meilleurs tarifs du marché camerounais, aussi bien pour les particuliers que pour les entreprises.</p>
+      </div>
+      <div class="apropos-values">
+        <div class="value-card"><i class="fas fa-medal"></i><h4 data-i18n="val1_title">Qualité garantie</h4><p data-i18n="val1_txt">Produits testés et vérifiés avant vente</p></div>
+        <div class="value-card"><i class="fas fa-tags"></i><h4 data-i18n="val2_title">Meilleurs prix</h4><p data-i18n="val2_txt">Import direct Chine = économies maximales</p></div>
+        <div class="value-card"><i class="fas fa-headset"></i><h4 data-i18n="val3_title">SAV réactif</h4><p data-i18n="val3_txt">Support client disponible 7j/7 sur WhatsApp</p></div>
+        <div class="value-card"><i class="fas fa-truck"></i><h4 data-i18n="val4_title">Livraison Cameroun</h4><p data-i18n="val4_txt">Expédition dans toutes les villes du pays</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALISATION -->
+<section class="localisation" id="localisation">
+  <div class="container">
+    <div class="section-header"><h2 data-i18n="loc_title">Nous Trouver</h2><p data-i18n="loc_sub">Douala-Bar Akwa, Douala, Cameroun</p></div>
+    <div class="map-wrapper">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.756847024756!2d9.7063!3d4.0510!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1061128be2c8d177%3A0xb96b9c7e6c5e4555!2sBar%20Akwa%2C%20Douala%2C%20Cameroon!5e0!3m2!1sfr!2scm!4v1680000000000!5m2!1sfr!2scm"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation ZOOM Technologie"></iframe>
+    </div>
+    <div class="contact-cards">
+      <div class="contact-card"><i class="fas fa-map-marker-alt"></i><h4 data-i18n="contact_address">Adresse</h4><p>Douala-Bar Akwa, Douala<br/>Cameroun</p></div>
+      <div class="contact-card"><i class="fab fa-whatsapp"></i><h4>WhatsApp</h4><a href="https://wa.me/697557365" target="_blank">+237 697557365</a></div>
+      <div class="contact-card"><i class="fab fa-facebook-messenger"></i><h4>Messenger</h4><a href="https://m.me/tem.larissa" target="_blank">m.me/zoomtechnologie</a></div>
+      <div class="contact-card"><i class="fas fa-clock"></i><h4 data-i18n="contact_hours_lbl">Horaires</h4><p data-i18n="contact_hours_val">Lun – Sam : 8h00 – 18h00</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA CONTACT -->
+<section class="contact-cta" id="contact">
+  <div class="container">
+    <div class="cta-box">
+      <h2 data-i18n="cta_title">Passez votre commande facilement</h2>
+      <p><span data-i18n="cta_sub">Contactez-nous sur WhatsApp ou Messenger pour toute commande, devis ou renseignement. Réponse rapide garantie !</span></p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/237697557365?text=Bonjour ZOOM Technologie, je voudrais passer une commande." class="btn-whatsapp-big" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://m.me/tem.larissa" class="btn-messenger-big" target="_blank"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+        <a href="https://www.facebook.com/share/1E4NAzynkj/" class="btn-facebook-big" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><div class="logo-icon"><i class="fas fa-bolt"></i></div><div class="logo-text"><span class="logo-main">ZOOM</span><span class="logo-sub">TECHNOLOGIE</span></div></div>
+        <p><span data-i18n="footer_desc">Votre boutique informatique de confiance à Douala. Ordinateurs, smartphones, accessoires et équipements NTIC importés directement de Chine.</span></p>
+        <div class="footer-socials">
+          <a href="https://wa.me/237697557365" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://m.me/tem.larissa" target="_blank" title="Messenger"><i class="fab fa-facebook-messenger"></i></a>
+          <a href="https://www.facebook.com/share/1E4NAzynkj/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/zoomtechnologie" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_cat">Catégories</h4>
+        <ul>
+          <li><a href="#" onclick="filterCategory(null,'ordinateur')"><span data-i18n="footer_laptop">Ordinateurs portables</span></a></li>
+          <li><a href="#" onclick="filterCategory(null,'smartphone')">Smartphones</a></li>
+          <li><a href="#" onclick="filterCategory(null,'accessoire')">Accessoires</a></li>
+          <li><a href="#" onclick="filterCategory(null,'reseau')">Réseau & WiFi</a></li>
+          <li><a href="#" onclick="filterCategory(null,'ecran')"><span data-i18n="footer_screen">Écrans & Moniteurs</span></a></li>
+          <li><a href="#" onclick="filterCategory(null,'energie')">Énergie & Onduleurs</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_info">Informations</h4>
+        <ul>
+          <li><a href="#apropos"><span data-i18n="footer_about">À propos</span></a></li>
+          <li><a href="#gros"><span data-i18n="footer_wholesale">Vente en gros</span></a></li>
+          <li><a href="#flash">Ventes Flash</a></li>
+          <li><a href="#localisation"><span data-i18n="footer_store">Notre boutique</span></a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 data-i18n="footer_contact">Contact rapide</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Douala-Bar Akwa, Douala, Cameroun</p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/237697557365">+237 697557365</a></p>
+        <p><i class="fas fa-clock"></i> <span data-i18n="footer_hours">Lun – Sam : 8h – 18h</span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ZOOM Technologie. Tous droits réservés. — douala-Bar Akwa, Douala, Cameroun</p>
+      <button class="ck-settings-link" onclick="ZoomCookies.openCookieSettings()">
+        <i class="fas fa-cookie-bite"></i> <span data-i18n="footer_cookies">Paramètres cookies</span>
+      </button>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/237697557365?text=Bonjour ZOOM Technologie !" class="whatsapp-float" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal-box" id="modalBox" onclick="event.stopPropagation()">
+    <!-- Contenu injecté dynamiquement par app.js -->
+  </div>
+</div>
+
+<!-- SHARE SHEET -->
+<div class="share-sheet-overlay" id="shareSheetOverlay" onclick="closeShareSheet()">
+  <div class="share-sheet" onclick="event.stopPropagation()">
+    <div class="share-sheet-handle"></div>
+    <div class="share-sheet-title">Partager ce produit</div>
+    <div class="share-product-preview" id="shareProductPreview"></div>
+    <div class="share-options">
+      <button class="share-opt share-wa" onclick="shareVia('whatsapp')"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></button>
+      <button class="share-opt share-fb" onclick="shareVia('facebook')"><i class="fab fa-facebook-f"></i><span>Facebook</span></button>
+      <button class="share-opt share-ig" onclick="shareVia('instagram')"><i class="fab fa-instagram"></i><span>Instagram</span></button>
+      <button class="share-opt share-status" onclick="shareVia('status')"><i class="fas fa-circle-dot"></i><span>Statut</span></button>
+      <button class="share-opt share-copy" onclick="shareVia('copy')"><i class="fas fa-link"></i><span>Copier</span></button>
+      <button class="share-opt share-more" onclick="shareVia('native')"><i class="fas fa-ellipsis-h"></i><span>Plus</span></button>
+    </div>
+    <button class="share-cancel" onclick="closeShareSheet()">Annuler</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     SECTION RÉCEMMENT VUS
+     ════════════════════════════════ -->
+<section id="recentlyViewedSection" style="display:none">
+  <div class="container">
+    <div class="section-header">
+      <h2>👁️ Récemment consultés</h2>
+      <p>Produits que vous avez récemment vus</p>
+    </div>
+    <div class="rv-grid" id="recentlyViewedGrid"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     BANDEAU CONSENTEMENT COOKIES
+     ════════════════════════════════ -->
+<div id="cookieBanner" role="dialog" aria-label="Gestion des cookies">
+  <div class="ck-banner-inner">
+    <span class="ck-icon">🍪</span>
+    <div class="ck-text">
+      <h3>Votre vie privée nous importe</h3>
+      <p>Nous utilisons des cookies pour améliorer votre expérience, analyser notre trafic et personnaliser le contenu.
+        <a onclick="ZoomCookies.showPanel()">Personnaliser mes choix</a>
+      </p>
+    </div>
+    <div class="ck-actions">
+      <button class="ck-btn ck-btn-accept"  onclick="ZoomCookies.acceptAll()">✅ Accepter tout</button>
+      <button class="ck-btn ck-btn-custom"  onclick="ZoomCookies.showPanel()">⚙️ Personnaliser</button>
+      <button class="ck-btn ck-btn-refuse"  onclick="ZoomCookies.refuseAll()">Refuser</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     PANNEAU PERSONNALISATION COOKIES
+     ════════════════════════════════ -->
+<div id="cookiePanel" role="dialog" aria-label="Paramètres cookies">
+  <div class="ck-panel-inner">
+    <div class="ck-panel-handle"></div>
+    <div class="ck-panel-title">⚙️ Paramètres de confidentialité</div>
+    <div class="ck-panel-subtitle">Choisissez les cookies que vous autorisez. Vous pouvez modifier vos préférences à tout moment depuis le pied de page.</div>
+
+    <!-- Essentiels -->
+    <div class="ck-category">
+      <div class="ck-category-info">
+        <h4>🔒 Cookies essentiels <span class="ck-tag ck-tag-required">Obligatoires</span></h4>
+        <p>Nécessaires au fonctionnement du site : favoris, préférences de tri, mémorisation de votre dernière catégorie consultée. Toujours actifs.</p>
+      </div>
+      <div class="ck-toggle-wrap">
+        <label class="ck-toggle"><input type="checkbox" checked disabled><span class="ck-slider"></span></label>
+      </div>
+    </div>
+
+    <!-- Analytics -->
+    <div class="ck-category">
+      <div class="ck-category-info">
+        <h4>📊 Cookies analytiques <span class="ck-tag ck-tag-optional">Optionnel</span></h4>
+        <p>Nous aident à comprendre comment vous utilisez le site : produits les plus consultés, recherches effectuées, badge "Populaire". Données anonymes.</p>
+      </div>
+      <div class="ck-toggle-wrap">
+        <label class="ck-toggle"><input type="checkbox" id="ck-analytics"><span class="ck-slider"></span></label>
+      </div>
+    </div>
+
+    <!-- Marketing -->
+    <div class="ck-category">
+      <div class="ck-category-info">
+        <h4>🎯 Cookies marketing <span class="ck-tag ck-tag-optional">Optionnel</span></h4>
+        <p>Permettent d'afficher la section "Récemment consultés" et des suggestions personnalisées basées sur vos visites.</p>
+      </div>
+      <div class="ck-toggle-wrap">
+        <label class="ck-toggle"><input type="checkbox" id="ck-marketing"><span class="ck-slider"></span></label>
+      </div>
+    </div>
+
+    <!-- Performance -->
+    <div class="ck-category">
+      <div class="ck-category-info">
+        <h4>⚡ Cookies de performance <span class="ck-tag ck-tag-optional">Optionnel</span></h4>
+        <p>Détectent votre type de connexion et appareil pour optimiser automatiquement les images sur réseau lent.</p>
+      </div>
+      <div class="ck-toggle-wrap">
+        <label class="ck-toggle"><input type="checkbox" id="ck-performance"><span class="ck-slider"></span></label>
+      </div>
+    </div>
+
+    <div class="ck-panel-actions">
+      <button class="ck-btn-save-custom"      onclick="ZoomCookies.saveCustom()">💾 Enregistrer mes choix</button>
+      <button class="ck-btn-accept-all-panel" onclick="ZoomCookies.acceptAll()">✅ Tout accepter</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     OVERLAY PANIER
+     ════════════════════════════════ -->
+<div id="cartOverlay"></div>
+
+<!-- ════════════════════════════════
+     DRAWER PANIER
+     ════════════════════════════════ -->
+<div id="cartDrawer" role="dialog" aria-label="Mon panier">
+
+  <!-- Header -->
+  <div class="cart-drawer-header">
+    <div class="cart-drawer-title">
+      <i class="fas fa-shopping-cart"></i>
+      Mon Panier
+      <span id="cartCount">0 article</span>
+    </div>
+    <button class="cart-close-btn" onclick="ZoomCart.closeDrawer()" aria-label="Fermer le panier">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Panier vide -->
+  <div id="cartEmpty">
+    <i class="fas fa-shopping-cart"></i>
+    <p>Votre panier est vide.<br/>Ajoutez des produits depuis le catalogue !</p>
+  </div>
+
+  <!-- Liste des articles -->
+  <div id="cartItemsList"></div>
+
+  <!-- Footer : total + boutons -->
+  <div id="cartFooter" style="display:none">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Total estimé</span>
+      <span id="cartTotal">0 FCFA</span>
+    </div>
+    <div class="cart-order-btns">
+      <button class="cart-btn-wa" onclick="ZoomCart.orderWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+      </button>
+      <button class="cart-btn-ms" onclick="ZoomCart.orderMessenger()">
+        <i class="fab fa-facebook-messenger"></i> Commander sur Messenger
+      </button>
+      <button class="cart-btn-clear" onclick="ZoomCart.clearCart()">
+        <i class="fas fa-trash-alt"></i> Vider le panier
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/performance.js"></script>
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
+<script src="js/cookies.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/zoom-image.js"></script>
+<script src="js/push-notifications.js"></script>
+<script src="js/loyalty.js"></script>
+<script src="js/limited-offers.js"></script>
+<script src="js/share.js"></script>
+<script>
+// ── PWA : enregistrement du Service Worker ──
+if('serviceWorker' in navigator){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => {
+        console.log('[ZOOM PWA] Service Worker enregistré :', reg.scope);
+        // Notifier si mise à jour disponible
+        reg.addEventListener('updatefound', () => {
+          const newSW = reg.installing;
+          newSW.addEventListener('statechange', () => {
+            if(newSW.state === 'installed' && navigator.serviceWorker.controller){
+              // Afficher une notification discrète de mise à jour
+              showPwaUpdate();
+            }
+          });
+        });
+      })
+      .catch(err => console.warn('[ZOOM PWA] SW non enregistré :', err));
+  });
+}
+
+// ── Banner "Installer l'application" ──
+let deferredInstall = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredInstall = e;
+  // Afficher la bannière après 6 secondes si pas encore installé
+  setTimeout(showInstallBanner, 6000);
+});
+
+function showInstallBanner(){
+  if(document.getElementById('zt-pwa-banner')) return;
+  const banner = document.createElement('div');
+  banner.id = 'zt-pwa-banner';
+  banner.innerHTML = `
+    <div class="zt-pwa-inner">
+      <span class="zt-pwa-icon">⚡</span>
+      <div class="zt-pwa-text">
+        <strong>Installer ZOOM Tech</strong>
+        <span>Accès rapide depuis votre écran d'accueil</span>
+      </div>
+      <button class="zt-pwa-install" onclick="installPwa()">Installer</button>
+      <button class="zt-pwa-dismiss" onclick="dismissPwa()">✕</button>
+    </div>`;
+  document.body.appendChild(banner);
+  setTimeout(() => banner.classList.add('visible'), 100);
+}
+
+function installPwa(){
+  if(!deferredInstall) return;
+  deferredInstall.prompt();
+  deferredInstall.userChoice.then(choice => {
+    if(choice.outcome === 'accepted') dismissPwa();
+    deferredInstall = null;
+  });
+}
+function dismissPwa(){
+  const b = document.getElementById('zt-pwa-banner');
+  if(b){ b.classList.remove('visible'); setTimeout(() => b.remove(), 400); }
+}
+
+function showPwaUpdate(){
+  const toast = document.createElement('div');
+  toast.style.cssText = `
+    position:fixed;bottom:96px;left:50%;transform:translateX(-50%);
+    background:#0055FF;color:white;padding:10px 20px;border-radius:10px;
+    font-size:.80rem;font-weight:700;z-index:9999;
+    box-shadow:0 4px 16px rgba(0,85,255,.4);
+    cursor:pointer;font-family:'Inter',sans-serif;`;
+  toast.textContent = '🔄 Mise à jour disponible — Cliquer pour actualiser';
+  toast.onclick = () => window.location.reload();
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 8000);
+}
+</script>
+</body>
+</html>

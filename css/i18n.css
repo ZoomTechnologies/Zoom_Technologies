@@ -1,0 +1,56 @@
+/* ===========================
+   ZOOM TECHNOLOGIE — I18N.CSS
+   Sélecteur de langue — drapeaux seuls
+   =========================== */
+
+#zt-lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 3px 5px;
+  flex-shrink: 0;
+}
+
+.zt-lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  border-radius: 7px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.18s;
+  font-size: 1.18rem;   /* taille du drapeau emoji */
+  line-height: 1;
+  padding: 0;
+  opacity: 0.65;
+  filter: grayscale(30%);
+}
+.zt-lang-btn:hover {
+  background: rgba(255,255,255,0.14);
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+.zt-lang-btn.active {
+  background: rgba(255,255,255,0.20);
+  opacity: 1;
+  filter: grayscale(0%);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+}
+
+.zt-lang-flag { display: block; line-height: 1; }
+
+.zt-lang-sep {
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,0.18);
+  flex-shrink: 0;
+}
+
+/* Tooltip natif via title — pas besoin de CSS supplémentaire */

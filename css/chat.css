@@ -1,0 +1,365 @@
+/* ===========================
+   ZOOM TECHNOLOGIE — CHAT.CSS
+   Chat en direct flottant
+   =========================== */
+
+/* ── Bulle flottante ── */
+#zt-chat-bubble {
+  position: fixed;
+  bottom: 100px;        /* au-dessus du bouton WhatsApp */
+  right: 28px;
+  z-index: 1500;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0055FF, #003DC0);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,85,255,0.50);
+  transition: transform 0.22s, box-shadow 0.22s;
+  animation: chatPulse 3s ease-in-out infinite;
+}
+#zt-chat-bubble:hover {
+  transform: scale(1.10);
+  box-shadow: 0 8px 30px rgba(0,85,255,0.65);
+}
+@keyframes chatPulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(0,85,255,0.50); }
+  50%      { box-shadow: 0 4px 28px rgba(0,85,255,0.80); }
+}
+
+/* Badge "nouveau message" sur la bulle */
+#zt-chat-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 18px;
+  height: 18px;
+  background: #e53e3e;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.62rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  display: none;
+}
+
+/* ── Fenêtre de chat ── */
+#zt-chat-window {
+  position: fixed;
+  bottom: 170px;
+  right: 28px;
+  z-index: 1500;
+  width: 340px;
+  max-height: 500px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.18), 0 2px 12px rgba(0,85,255,0.10);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.85) translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.28s cubic-bezier(0.34,1.4,0.64,1), opacity 0.22s ease;
+  transform-origin: bottom right;
+}
+#zt-chat-window.open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Header du chat ── */
+.zt-chat-header {
+  background: linear-gradient(135deg, #0055FF, #003DC0);
+  padding: 14px 16px 12px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+}
+.zt-chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.35);
+}
+.zt-chat-header-info { flex: 1; }
+.zt-chat-header-name {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+}
+.zt-chat-header-status {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.80);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+}
+.zt-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: statusBlink 2s ease-in-out infinite;
+}
+.zt-status-dot.offline { background: #fbbf24; animation: none; }
+@keyframes statusBlink {
+  0%,100% { opacity:1 } 50% { opacity:.4 }
+}
+.zt-chat-close {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s;
+  flex-shrink: 0;
+}
+.zt-chat-close:hover { background: rgba(255,255,255,0.30); }
+
+/* Bandeau horaires */
+.zt-hours-bar {
+  background: #f0f5ff;
+  border-bottom: 1px solid #e0eaff;
+  padding: 7px 14px;
+  font-size: 0.70rem;
+  color: #4466cc;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.zt-hours-bar i { font-size: 0.65rem; }
+
+/* ── Zone messages ── */
+.zt-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f6f8fc;
+  scrollbar-width: thin;
+  scrollbar-color: #c8d4e8 transparent;
+}
+.zt-chat-messages::-webkit-scrollbar { width: 4px; }
+.zt-chat-messages::-webkit-scrollbar-thumb { background: #c8d4e8; border-radius: 2px; }
+
+/* Bulle bot */
+.zt-msg {
+  display: flex;
+  gap: 7px;
+  align-items: flex-end;
+  max-width: 88%;
+  animation: msgSlideIn 0.22s ease;
+}
+@keyframes msgSlideIn {
+  from { opacity:0; transform:translateY(8px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.zt-msg-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#0055FF,#003DC0);
+  color: white;
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 2px;
+}
+.zt-msg-bubble {
+  background: white;
+  border: 1px solid #e4eaf4;
+  border-radius: 14px 14px 14px 3px;
+  padding: 9px 12px;
+  font-size: 0.80rem;
+  color: #1a1a2e;
+  line-height: 1.45;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.zt-msg-time {
+  font-size: 0.58rem;
+  color: #aab;
+  margin-top: 3px;
+  margin-left: 33px;
+}
+
+/* Bulle utilisateur */
+.zt-msg.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+  max-width: 80%;
+}
+.zt-msg.user .zt-msg-bubble {
+  background: linear-gradient(135deg,#0055FF,#2266FF);
+  color: white;
+  border: none;
+  border-radius: 14px 14px 3px 14px;
+  box-shadow: 0 2px 8px rgba(0,85,255,0.25);
+}
+.zt-msg.user .zt-msg-time { text-align: right; margin-left:0; margin-right: 33px; }
+
+/* Indicateur "en train d'écrire" */
+.zt-typing .zt-msg-bubble {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 14px;
+}
+.zt-typing-dot {
+  width: 6px; height: 6px;
+  background: #8899bb;
+  border-radius: 50%;
+  animation: typingBounce 1.2s ease-in-out infinite;
+}
+.zt-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.zt-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typingBounce {
+  0%,60%,100% { transform: translateY(0); opacity:0.5; }
+  30%          { transform: translateY(-5px); opacity:1; }
+}
+
+/* ── Réponses rapides (chips) ── */
+.zt-quick-replies {
+  padding: 8px 12px 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: #f6f8fc;
+  border-top: 1px solid #eaeff8;
+  flex-shrink: 0;
+}
+.zt-quick-btn {
+  background: white;
+  border: 1.5px solid #c8d8f8;
+  color: #0055FF;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.16s;
+  white-space: nowrap;
+}
+.zt-quick-btn:hover {
+  background: #0055FF;
+  color: white;
+  border-color: #0055FF;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,85,255,0.25);
+}
+
+/* ── Zone de saisie ── */
+.zt-chat-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: white;
+  border-top: 1px solid #e8edf5;
+  flex-shrink: 0;
+}
+.zt-chat-input input {
+  flex: 1;
+  border: 1.5px solid #e0e8f5;
+  border-radius: 22px;
+  padding: 8px 14px;
+  font-size: 0.80rem;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a2e;
+  outline: none;
+  background: #f6f8fc;
+  transition: border-color 0.18s, background 0.18s;
+}
+.zt-chat-input input:focus {
+  border-color: #0055FF;
+  background: white;
+}
+.zt-chat-input input::placeholder { color: #aab; }
+.zt-send-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0055FF, #003DC0);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.18s;
+  box-shadow: 0 2px 8px rgba(0,85,255,0.30);
+}
+.zt-send-btn:hover { transform: scale(1.10); box-shadow: 0 4px 14px rgba(0,85,255,0.45); }
+.zt-send-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+/* ── Bouton WhatsApp dans le chat ── */
+.zt-wa-redirect {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  margin-top: 6px;
+  transition: all 0.18s;
+  box-shadow: 0 2px 8px rgba(37,211,102,0.30);
+}
+.zt-wa-redirect:hover {
+  background: #128C7E;
+  box-shadow: 0 4px 14px rgba(37,211,102,0.45);
+  transform: translateY(-1px);
+}
+.zt-wa-redirect i { font-size: 1rem; }
+
+/* ── Responsive mobile ── */
+@media (max-width: 480px) {
+  #zt-chat-window {
+    width: calc(100vw - 24px);
+    right: 12px;
+    bottom: 160px;
+    max-height: 430px;
+  }
+  #zt-chat-bubble { right: 16px; bottom: 95px; }
+}
