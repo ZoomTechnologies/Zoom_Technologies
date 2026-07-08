@@ -340,7 +340,7 @@ const PRODUCTS = [
   },
  {
     id: 41, cat: "accessoire", badge: "",
-    imgs: ["images/24.jpg", "images/24a.jpg", "images/24.jpg", "images/24c.jpg"],
+    imgs: ["images/24.jpg", "images/24a.jpg", "images/24b.jpg", "images/24c.jpg"],
     icon: "🖨️",
     name: "Boitier Disque dur SSD - M.2 SSD Enclosure 3.1",
     desc: "Jet d'encre couleur, scanner, copie, WiFi, recto-verso auto.",
