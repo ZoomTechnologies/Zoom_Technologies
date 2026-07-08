@@ -338,4 +338,12 @@ const PRODUCTS = [
     desc: "Jet d'encre couleur, scanner, copie, WiFi, recto-verso auto.",
     price: "65 000 FCFA", oldPrice: null
   },
+ {
+    id: 41, cat: "accessoire", badge: "",
+    imgs: ["images/24.jpg", "images/24a.jpg", "images/24.jpg", "images/24c.jpg"],
+    icon: "🖨️",
+    name: "Boitier Disque dur SSD - M.2 SSD Enclosure 3.1",
+    desc: "Jet d'encre couleur, scanner, copie, WiFi, recto-verso auto.",
+    price: "8 000 FCFA", oldPrice: "8 000 FCFA"
+  }, 
 ];
