@@ -354,4 +354,12 @@ const PRODUCTS = [
     desc: "Pince à sertir, Testeur de câble, Outils de préparation de câble, Outils de manipulation,Outils électriques, Connecteurs et accessoires",
     price: "15 000 FCFA", oldPrice: "20 000 FCFA"
   }, 
+   {
+    id: 43, cat: "accessoire", badge: "promo",
+    imgs: ["images/W1.webp", "images/W2.webp", "images/W3.webp", "images/W4.webp"],
+    icon: "🖨️",
+    name: "Enceinte sans fil portable WUF-W58 Super Bass",
+    desc: "Bluetooth 3.0, portée de 15 à 20 m, Puissance nominale de 5W + 5W, Autonomie de 4 à 6 heures, temps de charge de 2 à 3 heures",
+    price: "10 000 FCFA", oldPrice: "15 000 FCFA"
+  }, 
 ];
