@@ -346,4 +346,12 @@ const PRODUCTS = [
     desc: "Jet d'encre couleur, scanner, copie, WiFi, recto-verso auto.",
     price: "8 000 FCFA", oldPrice: "8 000 FCFA"
   }, 
+  {
+    id: 42, cat: "reseau", badge: "",
+    imgs: ["images/TA.webp", "images/TA1.webp", "images/TA2.webp", "images/TA3.webp"],
+    icon: "🖨️",
+    name: "Trousse de Maintenance Réseau",
+    desc: "Pince à sertir, Testeur de câble, Outils de préparation de câble, Outils de manipulation,Outils électriques, Connecteurs et accessoires",
+    price: "15 000 FCFA", oldPrice: "20 000 FCFA"
+  }, 
 ];
